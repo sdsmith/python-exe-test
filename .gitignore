@@ -1,0 +1,8 @@
+/venv
+/exe_build
+/build
+/dist
+/temp_hello.egg-info
+*.pyd
+*.c
+__pycache__
