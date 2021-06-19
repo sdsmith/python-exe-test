@@ -1,0 +1,3 @@
+[submodule "deps/make-stub-files"]
+	path = deps/make-stub-files
+	url = git@github.com:sdsmith/make-stub-files.git

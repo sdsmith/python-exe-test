@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "idleberg.innosetup"
+        "idleberg.innosetup",
+        "guyskk.language-cython",
+        "emeraldwalk.runonsave"
     ]
 }

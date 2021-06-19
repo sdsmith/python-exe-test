@@ -2,7 +2,9 @@
 /exe_build
 /build
 /dist
-/temp_hello.egg-info
+*.egg-info
+*.pyi
 *.pyd
 *.c
+*.spec
 __pycache__

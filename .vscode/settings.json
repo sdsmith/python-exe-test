@@ -1,3 +1,12 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.analysis.stubPath": "typings",
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.pyx$",
+                "cmd": "python deps/make-stub-files/make_stub_files.py --force-pyx -o ${file}"
+            }
+        ]
+    }
 }
