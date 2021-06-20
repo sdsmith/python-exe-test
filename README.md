@@ -55,16 +55,23 @@ pip install -e .
 # NOTE: Use one folder mode to debug packaging
 python -OO -m PyInstaller main.py
 #
-# NOTE: Windows defender sees the single exe as a trojan...
-# -F: package into a single exe
-#  - Increased startup time. Means it
-# one exe install
+# NOTE: Windows defender sees the single exe as a trojan sometimes(?!)
+# -F, --onefile: package into a single exe
+#  - Increased startup time while it extracts into tmp.
 ```
 
 Creating a reproducible build: https://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#creating-a-reproducible-build
 Encrypting Python Bytecode: https://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#creating-a-reproducible-build
 Supporting multiple operating systems: https://pyinstaller.readthedocs.io/en/stable/usage.html#supporting-multiple-operating-systems
 - Need to bundle on each OS separately
+
+##### Optional: Compress the exe with UPX
+
+https://upx.github.io/
+https://pyinstaller.readthedocs.io/en/stable/usage.html#using-upx
+
+Use `--upx-dir=' to point to the upx exe. If available pyinstaller will do it.
+
 
 #### py2exe (Not used)
 
@@ -78,11 +85,6 @@ python setup.py py2exe
 
 https://stackoverflow.com/a/54409096/3693388
 https://pyinstaller.readthedocs.io/en/stable/usage.html#capturing-windows-version-data
-
-### Optional: Compress the exe with UPX
-
-https://upx.github.io/
-https://pyinstaller.readthedocs.io/en/stable/usage.html#using-upx
 
 ### Create Windows Installer exe
 

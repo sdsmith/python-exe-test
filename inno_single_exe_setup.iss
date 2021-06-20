@@ -23,8 +23,8 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\stewa\source\repos\temp\exe_build
-OutputBaseFilename=main_setup
+OutputDir=.\dist
+OutputBaseFilename=TestPythonExe_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

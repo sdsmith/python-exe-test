@@ -22,8 +22,8 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\stewa\source\repos\temp\exe_build
-OutputBaseFilename=mysetup
+OutputDir=.\dist
+OutputBaseFilename=TestPythonExeFolder
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
