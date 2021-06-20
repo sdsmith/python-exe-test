@@ -29,6 +29,8 @@ python deps/make-stub-files/make_stub_files.py --force-pyx <file>
 
 ## Building and Packaging
 
+See `gen_exe.py`.
+
 ### Install the project as editable
 
 > NOTE: Highly recommend doing this in a python virtual environment (`python -m venv venv`)!
@@ -72,6 +74,22 @@ https://pyinstaller.readthedocs.io/en/stable/usage.html#using-upx
 
 Use `--upx-dir=' to point to the upx exe. If available pyinstaller will do it.
 
+##### Optional: Populate exe version info
+
+https://stackoverflow.com/a/54409096/3693388
+https://pyinstaller.readthedocs.io/en/stable/usage.html#capturing-windows-version-data
+
+Get a version info file generated from some arbitrary exe to get a template.
+
+```sh
+pyi-grab_version <some_exe>
+```
+
+Edit the generated file with the correct info.
+
+Either pass the `--version-file=` arg to pyinstaller or use `pyi-set_version` to edit a created exe.
+
+> NOTE: For some reason `--version-file=` path is relative to the spec file.
 
 #### py2exe (Not used)
 
@@ -80,11 +98,6 @@ Use `--upx-dir=' to point to the upx exe. If available pyinstaller will do it.
 ```sh
 python setup.py py2exe
 ```
-
-### Optional: Populate exe version info
-
-https://stackoverflow.com/a/54409096/3693388
-https://pyinstaller.readthedocs.io/en/stable/usage.html#capturing-windows-version-data
 
 ### Create Windows Installer exe
 

@@ -7,7 +7,7 @@ main_file = 'main.py'
 subprocess.run(['pip', 'install', '-e', '.'], shell=True, check=True)
 
 # Create exe
-subprocess.run(['python', '-OO', '-m', 'PyInstaller', '--specpath=pkg/pyinstaller', '--upx-dir=deps/upx', '--onefile', main_file], shell=True, check=True)
+subprocess.run(['python', '-OO', '-m', 'PyInstaller', '--specpath=pkg/pyinstaller', '--upx-dir=deps/upx', '--version-file=file_version_info.txt', '--onefile', main_file], shell=True, check=True)
 
 if platform.system() == 'Windows':
     # Create windows installer
