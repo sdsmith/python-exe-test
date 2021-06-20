@@ -91,14 +91,6 @@ Either pass the `--version-file=` arg to pyinstaller or use `pyi-set_version` to
 
 > NOTE: For some reason `--version-file=` path is relative to the spec file.
 
-#### py2exe (Not used)
-
-> NOTE: Having trouble with the current setup script. After it's packaged into a windows installer and installed it seems to be broken.
-
-```sh
-python setup.py py2exe
-```
-
 ### Create Windows Installer exe
 
 Create a Windows Installer EXE using Inno Setup (.iss files). Can use the Inno Wizard to create a setup script.
