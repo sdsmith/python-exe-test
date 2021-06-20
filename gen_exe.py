@@ -6,7 +6,7 @@ main_file = 'main.py'
 # Ensure latest code is installed and cython compiled
 subprocess.run(['pip', 'install', '-e', '.'], shell=True, check=True)
 # Create exe
-subprocess.run(['python', '-OO', '-m', 'PyInstaller', main_file], shell=True, check=True)
+subprocess.run(['python', '-OO', '-m', 'PyInstaller', '--specpath=pkg/pyinstaller', main_file], shell=True, check=True)
 
 if platform.system() == 'Windows':
     # Create windows installer
