@@ -1,6 +1,5 @@
 {
     "python.pythonPath": "venv\\Scripts\\python.exe",
-    "python.analysis.stubPath": "typings",
     "emeraldwalk.runonsave": {
         "commands": [
             {

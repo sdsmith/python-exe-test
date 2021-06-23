@@ -45,6 +45,7 @@ pip install -e .
 ### Package into exe
 
 #### PyInstaller
+
 ```sh
 # Create 'one folder' build with exe and all the deps of the given file
 # Exe: ./dist/main/main.exe
@@ -66,6 +67,31 @@ Creating a reproducible build: https://pyinstaller.readthedocs.io/en/stable/adva
 Encrypting Python Bytecode: https://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#creating-a-reproducible-build
 Supporting multiple operating systems: https://pyinstaller.readthedocs.io/en/stable/usage.html#supporting-multiple-operating-systems
 - Need to bundle on each OS separately
+
+##### Packaging the correct files
+
+See this for packaging tips: https://github.com/pyinstaller/pyinstaller/wiki/How-to-Report-Bugs#make-sure-everything-is-packaged-correctly
+
+Most useful:
+- package it as a folder for debugging to see all the included files
+- python files will be merged into the exe. Use `pyi-archive_viewer` (installed with pyinstaller) to view the exe archive.
+    - check the `PYZ-*.pyz` archive, your code is likely there.
+
+###### Packaging dependencies of cython files
+
+Cython files (.pyx) can have imports. While pyinstaller follows and includes all of the imports of the provided file, it does not follow the imports of .pyx files. This becomes an issue when the cython file imports a dependency that is not imported by the rest of the non-cython parts of the application. This results in missing imports in the final exe.
+
+There is a feature request, but it doesn't seem to be active: https://github.com/pyinstaller/pyinstaller/issues/1674
+
+WARs:
+- Include missing modules in a python file crawled by pyinstaller.
+- Manually include missing modules.
+
+##### Add Windows CRT
+
+https://pyinstaller.readthedocs.io/en/stable/usage.html#windows
+
+Download the runtime here: https://www.microsoft.com/en-US/download/details.aspx?id=48145
 
 ##### Optional: Compress the exe with UPX
 
@@ -90,6 +116,10 @@ Edit the generated file with the correct info.
 Either pass the `--version-file=` arg to pyinstaller or use `pyi-set_version` to edit a created exe.
 
 > NOTE: For some reason `--version-file=` path is relative to the spec file.
+
+##### Optional: Create reproducible builds
+
+https://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#creating-a-reproducible-build
 
 ### Create Windows Installer exe
 
